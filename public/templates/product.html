@@ -1,0 +1,117 @@
+{@layout path="product" /}
+
+{<content}
+
+{@queryOne type="sample:product" field="_doc" fieldValue="{request.qs.id}" as="product"}
+<section id="page">
+    <header class="page-header mb30">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <h1>{product.title}</h1>
+                </div>
+
+                <div class="col-sm-6 hidden-xs">
+                    <ul id="navTrail">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="template-menu-left.html">Templates</a></li>
+                        <li><a href="template-menu-left.html">Sidebar</a></li>
+                        <li id="navTrailLast">Menu left</li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+    </header>
+    <section id="content" class="mt30 pb30">
+        <div class="container">
+            <div class="row">
+                <!-- sidebar -->
+                <aside id="sidebar" class="col-md-3">
+                    <nav id="subnav">
+                        <ul>
+                            <li><a class="active" href="#">Solace of a lonely highway<i class=" icon-right-open-mini"></i></a></li>
+                            <li><a href="#">Write with purpose<i class=" icon-right-open-mini"></i></a></li>
+                            <li><a href="#">Tree on a lake<i class=" icon-right-open-mini"></i></a></li>
+                            <li><a href="#">Don’t stop questioning<i class=" icon-right-open-mini"></i></a></li>
+                            <li><a href="#">Overheard this morning<i class=" icon-right-open-mini"></i></a></li>
+                        </ul>
+                    </nav>
+                </aside>
+                <!-- end sidebar -->
+                <!-- page content-->
+                <section class="col-md-9">
+
+                    <div class="row mb30">
+                        <div class="col-md-12">
+                            <div class="imgBorder">
+                                <img src="/preview/node/{product.photos[0].id}/product-overview?size=848&mimetype=image/jpeg&force=true" alt="HIDEO website template" class="img-responsive" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb15">
+
+                        <div class="col-md-4">
+                            <div class="boxFocus color1">
+                                <ul class="iconList list-unstyled">
+                                    <li>Choose your color scheme</li>
+                                    <li>Choose from 6 header styles</li>
+                                    <li>Choose your slider</li>
+                                    <li>Choose your pages templates</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-8">
+                            <h3>{product.title}</h3>
+                            <p>{product.summary}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb15">
+
+                        <div class="col-md-12">
+                            <h2>Eu velit. Class aptent taciti sociosqu</h2>
+
+                            <p> Per inceptos himenaeos. Praesent et dolor ac erat tempor auctor a in odio. Quisque sollicitudin elementum tristique. Phasellus ultrices tincidunt nulla ut fringilla. Nam interdum enim a mauris accumsan congue. Vivamus vitae leo lacus. Etiam mattis neque mollis eros hendrerit et dictum lacus feugiat. Aliquam sit amet sem erat. In lobortis erat non ipsum rutrum molestie. </p>
+
+
+                            <p> Curabitur turpis orci, gravida non ornare id, venenatis nec enim. Praesent posuere condimentum leo eget volutpat. Maecenas in ligula in lacus aliquam ultricies scelerisque vitae nisl. Pellentesque quam dui, cursus in mollis sed, pretium quis dui. Proin ac nibh et leo malesuada congue. Phasellus adipiscing lectus quis nisl bibendum nec hendrerit elit lacinia. Pellentesque mauris enim, varius scelerisque suscipit at, volutpat at dui. Ut aliquam lectus nunc. Sed non neque id lectus auctor facilisis id quis felis. Vivamus quis lectus erat. Donec sit amet nibh eget felis feugiat pulvinar. Integer in consectetur nibh. </p>
+                            <hr>
+                            <h3>Pellentesque libero est, sagittis eget vestibulum ut</h3>
+                            <p> facilisis porttitor nisl. Nulla scelerisque lectus id ipsum sollicitudin euismod. Mauris fermentum erat a ante tincidunt id condimentum lorem sodales. Nam lacus justo, porttitor sit amet egestas sit amet, scelerisque non nibh. Ut ultricies orci vitae nisl viverra quis tempus nulla ultricies. Etiam lorem tellus, porttitor nec fermentum sed, scelerisque eget sapien. Fusce quam turpis, bibendum eu pretium ut, vehicula eget mi. Aliquam erat volutpat. </p>
+                            <h3>Lorem ipsum dolor</h3>
+                            <p> mauris in facilisis venenatis, sapien purus fringilla risus, eu vestibulum lacus dolor et ante. Praesent semper quam ac sem adipiscing rhoncus. Integer pellentesque, augue ut feugiat laoreet, eros nulla vulputate quam, in tristique dolor odio non neque. Nullam convallis dapibus dolor, quis imperdiet mi fringilla quis. Donec lorem libero, pretium accumsan condimentum ut, dignissim vel augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu scelerisque sem. </p>
+                            <h4>Integer viverra purus eu lacus ultrices</h4>
+                            <p> ac volutpat metus blandit. Phasellus a sollicitudin elit. Nullam a urna nulla, aliquet adipiscing tellus. Vestibulum sit amet lectus sit amet risus molestie rutrum. Vivamus purus metus, blandit sed aliquam eu, auctor bibendum risus. In hac habitasse platea dictumst. </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row mb15">
+                        <div class="col-md-12">
+
+                            <blockquote>
+                                Every man has his technique, and they are all different.<br />When you know mine you'll be dead.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                </section>
+                <!--end page content right-->
+            </div>
+        </div>
+    </section>
+    <!--end page content-->
+
+</section>
+{/queryOne}
+
+{/content}
+
