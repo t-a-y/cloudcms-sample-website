@@ -1,8 +1,8 @@
 {
-    "clientKey": "fd24cdda-aac5-4b68-9c8f-6f07c49b41e6",
-    "clientSecret": "KppsOz61lXgBUd5QlUFNPQwxZEkvd0LLJRnIQbFHkt6L/+ReCdZgXPoRbkZeeRavUIJgL4rsn0RxRQFDCVd3e1IsvD1mRP0pcUklp37mGuc=",
-    "username": "a8b19fcf-4542-4bad-9e4c-16ef7ce8dd9a",
-    "password": "I2Fnqk9XPbdMTyQJZTflp1svex/wxQ39hx6h5cU3WshOWCqRULm8xPKsRwTgDG2M5DCN0cQ05bUQ045Leod/pAT0Ie0D5HQHi0xQCBNEq2w=",
-    "baseURL": "https://api.cloudcms.com",
-    "application": "890fd8f27031104c1448"
+  "application": "6f28f6624f3657030f9b",
+  "clientKey": "942158ee-2319-40c9-b68a-68f21163aa0a",
+  "clientSecret": "4ar/ZYVL6gzAfmrsU3OY5MyPDG0hkGy8n//9XMYYoDhLHQyb7xIG3jXirv0blnUEVNGDX+gSY1hE5wembgv5LfvJNdrHVGXmV0H+t/BolCE=",
+  "username": "ed350d82-dcd6-47c0-9165-de88cfc34fa0",
+  "password": "R/vPnHyS1/fOkSubcQ4ZN0P7lcNo18LOjXt1NCAEtPNywvsLwWIuzkOGGNtvv3TxL+i00Fgvszn8OqYtcOWLmck0YXXOf+qRx6/kziqBTJM=",
+  "baseURL": "http://localhost:8080"
 }

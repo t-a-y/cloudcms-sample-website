@@ -1,4 +1,4 @@
-{@layout path="products" /}
+{@layout path="cities" /}
 
 {<content}
 
@@ -7,26 +7,22 @@
         <div class="container clearfix">
             <div class="row">
 
-                <!-- categories filter -->
-                <nav id="filter" class="span12 text-center">
-                    <div class="btn-group">
-                        <a href="" class="btn btn-default" data-filter="*">All</a>
-                        <a href="" class="btn btn-default" data-filter=".chocolate">Chocolate</a>
-                        <a href ="" class="btn btn-default" data-filter=".birthdays">Birthdays</a>
-                        <a href ="" type="button" class="btn btn-default"  data-filter=".holidays">Holidays</a>
-                    </div>
-                </nav>
+                <h1>
+                    <a href="/guide/index.html">City Guide</a> &rarr; Cities
+                </h1>
 
-                <!-- items -->
+                <br/>
+
+                <!-- cities -->
                 <div class="portfolio-items isotopeWrapper clearfix imgHover neko-hover-1" id="3">
 
-                    {@query type="catalog:product"}
+                    {@query type="guide:city" sort="title"}
                         {#rows}
                         <article class="col-sm-4 isotopeItem {type}">
                             <div class="pinBox">
                                 <figure>
-                                    <a href="product.html?id={_doc}" title="link">
-                                        <img alt="" src="/preview/node/{photos[0].id}/product-thumbnail?width=326&mimetype=image/jpeg" class="img-responsive">
+                                    <a href="city.html?id={_doc}" title="link">
+                                        <img style="height:250px" alt="{title}" src="/preview/node/{_doc}/thumbnail?width=326&mimetype=image/jpeg" class="img-responsive">
                                     </a>
                                     <figcaption>
                                         <ul class="pinInfo">
@@ -35,7 +31,7 @@
                                             <li><a href=""><i class="icon-heart"></i>32</a></li>
                                         </ul>
                                         <div class="iconLinks">
-                                            <a href="product.html?id={_doc}" title="link"><i class="icon-picture "></i></a>
+                                            <a href="city.html?id={_doc}" title="link"><i class="icon-picture "></i></a>
                                             <a href="/theme/images/portfolio/zoom6.jpg" class="image-link" title="Zoom" ><i class="icon-search"></i></a>
                                         </div>
                                     </figcaption>
@@ -43,9 +39,14 @@
                                 <section class="boxContent">
                                     <h3>{title}</h3>
                                     <p>
-                                        {summary}
+                                        <b>{headline}</b>
                                         <br />
-                                        <a href="product.html?id={_doc}" class="moreLink">&rarr; read more</a>
+                                        <br/>
+                                        {summary}
+                                    </p>
+                                    <br/>
+                                    <p align="right">
+                                        <a class="btn btn-primary" href="city.html?id={_doc}" class="moreLink">Learn More</a>
                                     </p>
                                 </section>
                             </div>

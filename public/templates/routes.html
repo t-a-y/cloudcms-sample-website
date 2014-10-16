@@ -1,0 +1,51 @@
+{@layout path="routes" /}
+
+{<content}
+
+<section id="content">
+    <section class="pt30 pb30">
+        <div class="container clearfix">
+
+            <h1>
+                <a href="/guide/index.html">City Guide</a> &rarr; Routes
+            </h1>
+
+            <br/>
+
+            <div class="row">
+
+                <!-- routes -->
+                {@query type="guide:route"}
+                    {#rows}
+                    <div class="row well">
+                        <div class="col-md-3" align="left">
+                            <img style="border-radius: 8px;height:180px; width:200px" src="/preview/node/{source}/thumbnail_route?size=256&mimetype=image/jpeg&force=true"/>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{title}</h3>
+                            <br/>
+                            <p>
+                                Departs at: {departure}
+                                <br/>
+                                Arrives at: {arrival}
+                                <br/>
+                                Price: {cost}
+                            </p>
+                            <div>
+                                <a class="btn btn-primary" href="route.html?id={_doc}" class="moreLink">Make a Reservation</a>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div class="col-md-3" align="right">
+                            <img style="border-radius: 8px;height:180px; width:200px" src="/preview/node/{target}/thumbnail_route?size=256&mimetype=image/jpeg&force=true"/>
+                        </div>
+                    </div>
+                    {/rows}
+                {/query}
+            </div>
+        </div>
+    </section>
+</section>
+
+{/content}
+
