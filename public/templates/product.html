@@ -7,22 +7,9 @@
     <header class="page-header mb30">
         <div class="container">
             <div class="row">
-
                 <div class="col-sm-6">
                     <h1>{product.title}</h1>
                 </div>
-
-                <div class="col-sm-6 hidden-xs">
-                    <ul id="navTrail">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="template-menu-left.html">Templates</a></li>
-                        <li><a href="template-menu-left.html">Sidebar</a></li>
-                        <li id="navTrailLast">Menu left</li>
-                    </ul>
-                </div>
-
-
-
             </div>
         </div>
     </header>
@@ -48,7 +35,7 @@
                     <div class="row mb30">
                         <div class="col-md-12">
                             <div class="imgBorder">
-                                <img src="/preview/node/{product.photos[0].id}/product-overview?size=848&mimetype=image/jpeg&force=true" alt="HIDEO website template" class="img-responsive" />
+                                <img src="/preview/node/{product._doc}/thumbnail_large?size=848&mimetype=image/jpeg&force=true" alt="{title}" class="img-responsive" />
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,8 @@
 {
-  "application": "6f28f6624f3657030f9b",
-  "clientKey": "942158ee-2319-40c9-b68a-68f21163aa0a",
-  "clientSecret": "4ar/ZYVL6gzAfmrsU3OY5MyPDG0hkGy8n//9XMYYoDhLHQyb7xIG3jXirv0blnUEVNGDX+gSY1hE5wembgv5LfvJNdrHVGXmV0H+t/BolCE=",
-  "username": "ed350d82-dcd6-47c0-9165-de88cfc34fa0",
-  "password": "R/vPnHyS1/fOkSubcQ4ZN0P7lcNo18LOjXt1NCAEtPNywvsLwWIuzkOGGNtvv3TxL+i00Fgvszn8OqYtcOWLmck0YXXOf+qRx6/kziqBTJM=",
+  "application": "b5ea86c6885e1735cf21",
+  "clientKey": "18f8f260-bc1e-451b-9ddd-f5f63d7fca82",
+  "clientSecret": "FxnCUTJGJ3WE/0zCr0KozV8+6MJGjsvE5teMnLfxrZA4plOj2eZxu7CJW+N5zOeMUpVnCuNE3GqWb5pPY8XR0Fe9zSlFvqiEkRqG4PYN9qs=",
+  "username": "cf1b0592-242c-4aa3-bcfc-48b67c73bdaa",
+  "password": "Hkl5Z7mLYyqivLwlbZK0A7vk5xI8HMgPo7lsbjwew/JiOEDWPbTZj+m/T/17hCwEYqlajTQJV07dUjjT+5JiwY5K7K9t79bXQ5I7akbgLBE=",
   "baseURL": "http://localhost:8080"
 }
