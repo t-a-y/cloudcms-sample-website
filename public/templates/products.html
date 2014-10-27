@@ -12,15 +12,15 @@
                     <div class="btn-group">
                         <a href="" class="btn btn-default" data-filter="*">All</a>
                         <a href="" class="btn btn-default" data-filter=".chocolate">Chocolate</a>
-                        <a href ="" class="btn btn-default" data-filter=".birthdays">Birthdays</a>
-                        <a href ="" type="button" class="btn btn-default"  data-filter=".holidays">Holidays</a>
+                        <a href="" class="btn btn-default" data-filter=".birthdays">Birthdays</a>
+                        <a href="" type="button" class="btn btn-default"  data-filter=".holidays">Holidays</a>
                     </div>
                 </nav>
 
                 <!-- items -->
                 <div class="portfolio-items isotopeWrapper clearfix imgHover neko-hover-1" id="3">
 
-                    {@query type="catalog:product"}
+                    {@query type="catalog:product" sort="title"}
                         {#rows}
                         <article class="col-sm-4 isotopeItem {type}">
                             <div class="pinBox">
