@@ -28,3 +28,23 @@
 {
     border-radius: 4px;
 }
+
+#front-parallax
+{
+    background-image: url('../images/front/parallax.jpg');
+}
+
+#videoBg
+{
+    height: auto;
+}
+
+.minimalBox img
+{
+    border-radius: 8px;
+}
+
+.site-title
+{
+    padding-top: 20px;
+}
