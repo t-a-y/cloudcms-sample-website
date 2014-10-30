@@ -1,43 +1,72 @@
-{@layout path="catalog" theme="red" /}
+{@layout path="catalog" theme="red"  /}
 
 {<content}
 
-<section id="page">
+<section id="content">
     <header class="page-header mb30">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <h1>Product Catalog</h1>
                 </div>
             </div>
         </div>
     </header>
-    <section id="content" class="mt30 pb30">
-        <div class="container">
+    <section class="pt30 pb30">
+        <div class="container clearfix">
             <div class="row">
-                <!-- sidebar -->
-                <aside id="sidebar" class="col-md-3">
-                    <nav id="subnav">
-                        <ul>
-                            <li><a class="active" href="/catalog/index.html">Overview<i class=" icon-right-open-mini"></i></a></li>
-                            <li><a href="/catalog/products.html">View Products<i class=" icon-right-open-mini"></i></a></li>
-                        </ul>
-                    </nav>
-                </aside>
-                <!-- end sidebar -->
 
-                <!-- page content-->
-                <section class="col-md-9">
+                <!-- categories filter -->
+                <nav id="filter" class="span12 text-center">
+                    <div class="btn-group">
+                        <a href="" class="btn btn-default" data-filter="*">All</a>
+                        <a href="" class="btn btn-default" data-filter=".chocolate">Chocolate</a>
+                        <a href="" class="btn btn-default" data-filter=".strawberry">Strawberry</a>
+                        <a href="" class="btn btn-default" data-filter=".birthdays">Birthdays</a>
+                        <a href="" type="button" class="btn btn-default"  data-filter=".holidays">Holidays</a>
+                    </div>
+                </nav>
 
-                    <h3>Welcome to the Product Catalog</h3>
+                <!-- items -->
+                <div class="portfolio-items isotopeWrapper clearfix imgHover neko-hover-1" id="3">
 
-                </section>
-                <!--end page content right-->
+                    {@query type="catalog:product" sort="title"}
+                    {#rows}
+                    <article class="col-sm-4 isotopeItem {#categories}{.} {/categories}">
+                        <div class="pinBox">
+                            <figure>
+                                <a href="product.html?id={_doc}" title="link">
+                                    <img style="width:326px" alt="{title}" src="/preview/node/{_doc}/thumbnail?width=326&mimetype=image/jpeg" class="img-responsive">
+                                </a>
+                                <figcaption>
+                                    <ul class="pinInfo">
+                                        <li><a href=""><i class="icon-eye"></i>150</a></li>
+                                        <li><a href=""><i class="icon-comment-1"></i>4</a></li>
+                                        <li><a href=""><i class="icon-heart"></i>32</a></li>
+                                    </ul>
+                                    <div class="iconLinks">
+                                        <a href="product.html?id={_doc}" title="link"><i class="icon-picture "></i></a>
+                                        <a href="/theme/images/portfolio/zoom6.jpg" class="image-link" title="Zoom" ><i class="icon-search"></i></a>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <section class="boxContent">
+                                <h3>{title}</h3>
+                                <p>
+                                    {summary}
+                                    <br />
+                                    <a href="product.html?id={_doc}" class="moreLink">&rarr; read more</a>
+                                </p>
+                            </section>
+                        </div>
+                    </article>
+                    {/rows}
+                    {/query}
+
+                </div>
             </div>
         </div>
     </section>
-    <!--end page content-->
-
 </section>
 
 {/content}

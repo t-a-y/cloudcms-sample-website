@@ -8,7 +8,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1>Product Catalog</h1>
+                    <h1>
+                        <a href="/catalog/index.html">Product Catalog</a> &rarr; {product.title}
+                    </h1>
                 </div>
             </div>
         </div>
@@ -16,12 +18,6 @@
     <section id="content" class="mt30 pb30">
         <div class="container">
             <div class="row">
-
-                <h1>
-                    <a href="/catalog/index.html">Catalog</a> &rarr; <a href="/catalog/products.html">Products</a> &rarr; {product.title}
-                </h1>
-
-                <br/>
 
                 <!-- page content-->
                 <section class="col-md-12">
@@ -67,9 +63,9 @@
                                 <img src="/images/rating/star.png">
                                 {/lte}
                                 {/select}
-                                <span style="vertical-align:middle">
-                                    ({product._statistics.ratingAverageValue} stars based on {product._statistics.ratingTotalCount} reviews)
-                                </span>
+                                <p>
+                                    ({@math key="{product._statistics.ratingAverageValue}" method="round"/} stars based on {product._statistics.ratingTotalCount} reviews)
+                                </p>
                             </div>
                             <br/>
                             <h3>{product.headline}</h3>
@@ -80,7 +76,7 @@
                             <hr/>
 
                             <h3><b>Reviews</b></h3>
-                            {@associations from="{product._doc}" type="catalog:product-has-review"}
+                            {@associations node="{product._doc}" type="catalog:product-has-review"}
                             {#rows}
                             <div class="review-holder">
                                 <div class="rating-holder">
@@ -122,32 +118,46 @@
                                     {/lte}
                                     {/select}
                                 </div>
+                                {@queryOne type="n:person" field="name" fieldValue="{other.author}" as="person"}
                                 <div class="review">
                                     <div class="media">
                                         <div class="pull-left media-left">
-                                            {@queryOne type="n:person" field="name" fieldValue="{other.author}" as="person"}
-                                            <a href="#">
-                                                <img class="media-object" alt="{person.title}" src="/preview/node/{person._doc}/thumbnail_large?size=150&mimetype=image/jpeg&force=true">
-                                            </a>
-                                            <br/>
-                                            {person.title}
-                                            {/queryOne}
+                                            <div style="text-align:center">
+                                                <a href="/catalog/reviewer.html?id={person._doc}">
+                                                    <img class="media-object" alt="{person.title}" src="/preview/node/{person._doc}/thumbnail_large?size=150&mimetype=image/jpeg&force=true">
+                                                </a>
+                                                <p>
+                                                    <a href="/catalog/reviewer.html?id={person._doc}">
+                                                        {person.title}
+                                                    </a>
+                                                </p>
+                                            </div>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">{other.title}</h4>
+                                            <p>
+                                                By
+                                                &nbsp;
+                                                <a href="/catalog/reviewer.html?id={person._doc}">
+                                                    {person.title}
+                                                </a>
+                                            </p>
                                             <p>
                                                 {other.body}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+                                {/queryOne}
                             </div>
                             {/rows}
                             {/associations}
                         </div>
                         <div class="col-md-4 mb30">
                             <div class="imgBorder">
-                                <img src="/preview/node/{product._doc}/thumbnail_large?size=480&mimetype=image/jpeg&force=true" alt="{title}" class="img-responsive" />
+                                <a href="/catalog/product.html?id={product._doc}">
+                                    <img src="/preview/node/{product._doc}/thumbnail_large?size=480&mimetype=image/jpeg&force=true" alt="{title}" class="img-responsive" />
+                                </a>
                             </div>
                             <h3>{product.title}</h3>
                             <h5>{product.sku}</h5>
