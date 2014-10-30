@@ -12,7 +12,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>Travel Guide</h1>
+                    <h1>
+                        <a href="/guide/index.html">Travel Guide</a> &rarr; <a href="/guide/routes.html">Routes</a>
+                    </h1>
                 </div>
             </div>
         </div>
@@ -21,18 +23,16 @@
         <div class="container">
             <div class="row">
 
-                <h1>
-                    <a href="/guide/index.html">City Guide</a> &rarr; <a href="/guide/routes.html">Routes</a> &rarr; {route.title}
-                </h1>
-
-                <br/>
-
                 <!-- page content-->
                 <section class="col-md-12">
 
                     <div class="row">
-                        <div class="col-md-8">
-                            <h1><b>{source.title} to {target.title}</b></h1>
+                        <div class="col-md-7">
+                            <h1>
+                                <a href="/guide/route.html?id={route._doc}">
+                                    <b>{source.title} to {target.title}</b>
+                                </a>
+                            </h1>
 
                             <br/>
 
@@ -62,7 +62,7 @@
                                         <p>
                                             Departure Time: {route.departure}
                                         </p>
-                                        <p>{source.summary}</p>
+                                        <p>{source.summary|s}</p>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                                         <p>
                                             Arrival Time: {route.arrival}
                                         </p>
-                                        <p>{target.summary}</p>
+                                        <p>{target.summary|s}</p>
                                     </div>
                                 </div>
                             </div>
@@ -94,19 +94,21 @@
                             <div style="clear:both"></div>
 
                         </div>
-                        <div class="col-md-4 mb30">
+                        <div class="col-md-5 mb30">
 
                             <div class="imgBorder">
-                                <img src="/preview/node/{provider._doc}/thumbnail_large?size=480&mimetype=image/jpeg&force=true" alt="{title}" class="img-responsive" />
+                                <a href="/guide/provider.html?id={provider._doc}">
+                                    <img src="/preview/node/{provider._doc}/thumbnail_large?size=480&mimetype=image/jpeg&force=true" alt="{title}" class="img-responsive" />
+                                </a>
                             </div>
                             <br/>
-                            <h3>Service provided by {provider.title}</h3>
-                            <p>{provider.summary}</p>
+                            <h3>Service provided by <a href="/guide/provider.html?id={provider._doc}">{provider.title}</a></h3>
+                            <p>{provider.summary|s}</p>
                             <br/>
                             <div class="boxFocus color1">
                                 <ul class="iconList list-unstyled">
                                     {#provider.highlights}
-                                    <li>{.}</li>
+                                    <li>{.|s}</li>
                                     {/provider.highlights}
                                 </ul>
                             </div>
@@ -115,7 +117,7 @@
                             {#provider.testimonials}
                             <div>
                                 <blockquote>
-                                    {text}
+                                    {text|s}
                                 </blockquote>
                                 <p align="right">
                                     - {author}

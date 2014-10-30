@@ -43,7 +43,18 @@
     padding-top: 20px;
 }
 
-#globalWrapper.product .page-header a
+#globalWrapper.catalog .page-header a
 {
+    color: white;
+}
+
+#globalWrapper.guide .page-header a
+{
+    color: white;
+}
+
+#globalWrapper.guide .paralaxText a
+{
+    font-weight: 400;
     color: white;
 }

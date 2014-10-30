@@ -57,7 +57,7 @@ $(document).ready(function() {
 
 	/** INIT FUNCTIONS **/
 	initializeMainMenu();
-	moreLinkMosaicPorfolio('<h2>Kitchen Sink Guide</h2>', 'https://www.cloudcms.com/kitchensink.html', 'star');
+	moreLinkMosaicPorfolio('<h2>Sample Site Guide</h2>', 'https://www.cloudcms.com/samplesite.html', 'star');
 
      /*
     |--------------------------------------------------------------------------

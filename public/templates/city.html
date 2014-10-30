@@ -8,7 +8,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1>{city.title}</h1>
+                    <h1>
+                        <a href="/guide/index.html">Travel Guide</a> &rarr; <a href="/guide/cities.html">Cities</a>
+                    </h1>
                 </div>
             </div>
         </div>
@@ -17,25 +19,19 @@
         <div class="container">
             <div class="row">
 
-                <h1>
-                    <a href="/guide/index.html">City Guide</a> &rarr; <a href="/guide/cities.html">Cities</a> &rarr; {city.title}
-                </h1>
-
-                <br/>
-
                 <!-- page content-->
                 <section class="col-md-12">
 
                     <div class="row">
-                        <div class="col-md-8">
-                            <h1><b>{city.title}</b></h1>
+                        <div class="col-md-7">
+                            <h1><b><a href="/guide/city.html?id={city._doc}">{city.title}</a></b></h1>
                             <h3>{city.state}</h3>
                             <br/>
-                            <h3>{city.headline}</h3>
+                            <h3>{city.headline|s}</h3>
                             <br/>
                             <h4>By {city.author}</h4>
                             <p>
-                                {city.body}
+                                {city.body|s}
                             </p>
 
                             <br/>
@@ -72,19 +68,21 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-4 mb30">
+                        <div class="col-md-5 mb30">
                             <div class="imgBorder">
-                                <img src="/preview/node/{city._doc}/thumbnail_large?size=480&mimetype=image/jpeg&force=true" alt="{title}" class="img-responsive" />
+                                <a href="/guide/city.html?id={city._doc}">
+                                    <img src="/preview/node/{city._doc}/thumbnail_large?size=480&mimetype=image/jpeg&force=true" alt="{title}" class="img-responsive" />
+                                </a>
                             </div>
                             <br/>
                             <p>
-                                {city.summary}
+                                {city.summary|s}
                             </p>
                             <br/>
                             <div class="boxFocus color1">
                                 <ul class="iconList list-unstyled">
                                     {#city.highlights}
-                                    <li>{.}</li>
+                                    <li>{.|s}</li>
                                     {/city.highlights}
                                 </ul>
                             </div>
