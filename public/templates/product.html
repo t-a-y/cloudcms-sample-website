@@ -70,7 +70,7 @@
                             <br/>
                             <h3>{product.headline}</h3>
                             <p>
-                                {product.body}
+                                {product.body|s}
                             </p>
 
                             <hr/>
@@ -137,13 +137,12 @@
                                             <h4 class="media-heading">{other.title}</h4>
                                             <p>
                                                 By
-                                                &nbsp;
                                                 <a href="/catalog/reviewer.html?id={person._doc}">
                                                     {person.title}
                                                 </a>
                                             </p>
                                             <p>
-                                                {other.body}
+                                                {other.body|s}
                                             </p>
                                         </div>
                                     </div>
