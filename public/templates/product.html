@@ -118,7 +118,7 @@
                                     {/lte}
                                     {/select}
                                 </div>
-                                {@queryOne type="guide:person" field="name" fieldValue="{other.author}" as="person"}
+                                {@queryOne type="catalog:person" field="name" fieldValue="{other.author}" as="person"}
                                 <div class="review">
                                     <div class="media">
                                         <div class="pull-left media-left">
@@ -136,10 +136,7 @@
                                         <div class="media-body">
                                             <h4 class="media-heading">{other.title}</h4>
                                             <p>
-                                                By
-                                                <a href="/catalog/reviewer.html?id={person._doc}">
-                                                    {person.title}
-                                                </a>
+                                                By <a href="/catalog/reviewer.html?id={person._doc}">{person.title}</a>
                                             </p>
                                             <p>
                                                 {other.body|s}
