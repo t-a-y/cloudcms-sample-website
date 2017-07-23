@@ -1,8 +1,8 @@
 {
+  "application": "237817e824c656436a01",
   "clientKey": "23038f1b-69c2-4a02-a202-79b5ac783cd2",
   "clientSecret": "bYBmSzJiTz3Remj2WE4slPYR8L89dq2wUV4XvmDrok8xCUj5g4lK4uJwb+EjASCwd6Pl7zi0M9ye3kmU4Jjqx1VxOhDnbw+T1yy7qyh35J4=",
   "username": "eea1a8d4-7831-45b8-98ad-c26b39564c36",
   "password": "EuMw6QyLBQtWSo5kYqu/13fU71PNaew8gzR5yfddZbz9SgZ16sFte5ufb/s6sBzCUEVNAoRB6yhBxPokoIuuc42HWzpyzvzM18Jl/TZbDIE=",
-  "baseURL": "https://api.cloudcms.com",
-  "application": "237817e824c656436a01"
+  "baseURL": "https://api.cloudcms.com"
 }
