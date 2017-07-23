@@ -1,0 +1,121 @@
+{@layout path="provider" theme="blue" /}
+
+{<content}
+
+{@queryOne type="guide:provider" field="_doc" fieldValue="{request.qs.id}" as="provider"}
+<section id="page">
+    <header class="page-header mb30">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>
+                        <a href="/guide/index.html">Travel Guide</a> &rarr; <a href="/guide/providers.html">Providers</a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="content" class="mt30 pb30">
+        <div class="container">
+            <div class="row">
+
+                <section class="col-md-12">
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h1>
+                                <a href="/guide/provider.html?id={provider._doc}">
+                                    <b>{provider.title}</b>
+                                </a>
+                            </h1>
+                            <p>
+                                {provider.summary|s}
+                            </p>
+                            <p>
+                                {provider.body|s}
+                            </p>
+
+                            <br/>
+                            <h3>Highlights</h3>
+                            <ul>
+                            {#provider.highlights}
+                                <li>{.|s}</li>
+                            {/provider.highlights}
+                            </ul>
+
+                            <br/>
+                            <h3>Testimonials</h3>
+                            <ul>
+                                {#provider.testimonials}
+                                    <li>{text|s} - {author}</li>
+                                {/provider.testimonials}
+                            </ul>
+
+                            <br/>
+
+                            <h3><b>Routes</b></h3>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Departs</th>
+                                    <th>Arrives</th>
+                                    <th>Cost</th>
+                                    <th>Options</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- routes available -->
+                                {@query type="guide:route" field="provider" fieldValue="{provider.key}"}
+                                {#rows}
+                                <tr>
+                                    {@queryOne type="guide:city" field="_doc" fieldValue="{source}" as="source"}
+                                    {@queryOne type="guide:city" field="_doc" fieldValue="{target}" as="target"}
+                                    <td>
+                                        <a href="/guide/city.html?id={source._doc}">{source.title}</a>
+                                    </td>
+                                    <td>
+                                        <a href="/guide/city.html?id={target._doc}">{target.title}</a>
+                                    </td>
+                                    <td>
+                                        {departure}
+                                    </td>
+                                    <td>
+                                        {arrival}
+                                    </td>
+                                    <td>${cost}</td>
+                                    <td>
+                                        <a href="/guide/route.html?id={_doc}">Learn More</a>
+                                    </td>
+                                    {/queryOne}
+                                    {/queryOne}
+                                </tr>
+                                {/rows}
+                                {/query}
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="col-md-5 mb30">
+
+                            <div class="imgBorder">
+                                <a href="/guide/provider.html?id={provider._doc}">
+                                    <img src="/preview/node/{provider._doc}/thumbnail_large?size=480&mimetype=image/jpeg&force=true" alt="{title}" class="img-responsive" />
+                                </a>
+                            </div>
+                            <br/>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+</section>
+{/queryOne}
+
+{/content}
+

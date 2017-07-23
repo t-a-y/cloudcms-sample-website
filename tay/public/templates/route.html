@@ -1,0 +1,145 @@
+{@layout path="route" theme="blue" /}
+
+{<content}
+
+{@queryOne type="guide:route" field="_doc" fieldValue="{request.qs.id}" as="route"}
+{@queryOne type="guide:city" field="_doc" fieldValue="{route.source}" as="source"}
+{@queryOne type="guide:city" field="_doc" fieldValue="{route.target}" as="target"}
+{@queryOne type="guide:provider" field="key" fieldValue="{route.provider}" as="provider"}
+
+<section id="page">
+    <header class="page-header mb30">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>
+                        <a href="/guide/index.html">Travel Guide</a> &rarr; <a href="/guide/routes.html">Routes</a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="content" class="mt30 pb30">
+        <div class="container">
+            <div class="row">
+
+                <!-- page content-->
+                <section class="col-md-12">
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h1>
+                                <a href="/guide/route.html?id={route._doc}">
+                                    <b>{source.title} to {target.title}</b>
+                                </a>
+                            </h1>
+
+                            <br/>
+
+                            <p>
+                                Departing: {route.departure}
+                                <br/>
+                                Arriving: {route.arrival}
+                                <br/>
+                                Price: ${route.cost}
+                                <br/>
+                                Provided by {provider.title}
+                            </p>
+
+                            <br/>
+
+                            <div class="well">
+                                <h3>Departing from <a href="/guide/city.html?id={source._doc}">{source.title}</a></h3>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="imgBorder">
+                                            <a href="/guide/city.html?id={source._doc}">
+                                                <img src="/preview/node/{source._doc}/thumbnail_route_small?size=320&mimetype=image/jpeg&force=true" alt="{city.title}" class="img-responsive" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>
+                                            Departure Time: {route.departure}
+                                        </p>
+                                        <p>{source.summary|s}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="well">
+                                 <h3>Arriving at <a href="/guide/city.html?id={target._doc}">{target.title}</a></h3>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="imgBorder">
+                                            <a href="/guide/city.html?id={target._doc}">
+                                                <img src="/preview/node/{target._doc}/thumbnail_route_small?size=320&mimetype=image/jpeg&force=true" alt="{city.title}" class="img-responsive" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>
+                                            Arrival Time: {route.arrival}
+                                        </p>
+                                        <p>{target.summary|s}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br/>
+
+                            <div class="pull-right">
+                                <button class="btn btn-primary">Make a Reservation</button>
+                            </div>
+
+                            <div style="clear:both"></div>
+
+                        </div>
+                        <div class="col-md-5 mb30">
+
+                            <div class="imgBorder">
+                                <a href="/guide/provider.html?id={provider._doc}">
+                                    <img src="/preview/node/{provider._doc}/thumbnail_large?size=480&mimetype=image/jpeg&force=true" alt="{title}" class="img-responsive" />
+                                </a>
+                            </div>
+                            <br/>
+                            <h3>Service provided by <a href="/guide/provider.html?id={provider._doc}">{provider.title}</a></h3>
+                            <p>{provider.summary|s}</p>
+                            <br/>
+                            <div class="boxFocus color1">
+                                <ul class="iconList list-unstyled">
+                                    {#provider.highlights}
+                                    <li>{.|s}</li>
+                                    {/provider.highlights}
+                                </ul>
+                            </div>
+                            <br/>
+                            <br/>
+                            {#provider.testimonials}
+                            <div>
+                                <blockquote>
+                                    {text|s}
+                                </blockquote>
+                                <p align="right">
+                                    - {author}
+                                </p>
+                            </div>
+                            {/provider.testimonials}
+
+                        </div>
+                    </div>
+                </section>
+                <!--end page content right-->
+
+            </div>
+        </div>
+    </section>
+    <!--end page content-->
+
+</section>
+{/queryOne}
+{/queryOne}
+{/queryOne}
+{/queryOne}
+
+{/content}
+
